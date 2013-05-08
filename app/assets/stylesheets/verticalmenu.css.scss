@@ -10,6 +10,8 @@
     padding: 0;
     background: #25272F;
 
+  background-image: url(image-path("bgs/dark.png"));
+
     box-shadow: inset -10px 0 10px rgba(0, 0, 0, 0.7);
 
     font-weight: 700;
@@ -42,6 +44,8 @@
             img {
                 width: 40px;
                 height: auto;
+
+                vertical-align: middle;
             }
 
             &:hover {

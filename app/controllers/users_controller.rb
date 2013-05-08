@@ -37,6 +37,11 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
   end
 
+  def crop
+    @user = User.find(params[:id])
+  end
+
+
   # POST /users
   # POST /users.json
   def create
@@ -44,8 +49,12 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.save
-        format.html { redirect_to @user, notice: 'User was successfully created.' }
-        format.json { render json: @user, status: :created, location: @user }
+        if params[:user][:avatar].present?
+          format.html { render action: "crop" }
+        else
+          format.html { redirect_to @user, notice: 'User was successfully created.' }
+          format.json { render json: @user, status: :created, location: @user }
+        end
       else
         format.html { render action: "new" }
         format.json { render json: @user.errors, status: :unprocessable_entity }
@@ -60,8 +69,13 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.update_attributes(params[:user])
-        format.html { redirect_to @user, notice: 'User was successfully updated.' }
-        format.json { head :no_content }
+        if params[:user][:avatar].present?
+          #render "crop.html.erb"
+          format.html { render action: "crop" }
+        else
+          format.html { redirect_to @user, notice: 'User was successfully created.' }
+          format.json { head :no_content }
+        end
       else
         format.html { render action: "edit" }
         format.json { render json: @user.errors, status: :unprocessable_entity }

@@ -13,7 +13,7 @@
 			<%= link_to newspaper.name, newspaper_path(newspaper) %>
 		</div>
 		<div class="description">
-			<%= newspaper.description %>
+			<%= truncate(newspaper.description, :length => 245) %>
 		</div>
 	</div>
 	<% end %>
