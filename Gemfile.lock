@@ -1,3 +1,10 @@
+GIT
+  remote: git://github.com/cmer/socialization.git
+  revision: bed2653911a668aed7747949f1ac283b7a8481fd
+  specs:
+    socialization (0.5.0.beta4)
+      activerecord
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -50,6 +57,7 @@ GEM
     execjs (1.4.0)
       multi_json (~> 1.0)
     friendly_id (4.0.9)
+    hashie (2.0.4)
     hike (1.2.2)
     i18n (0.6.1)
     journey (1.0.4)
@@ -63,6 +71,9 @@ GEM
       treetop (~> 1.4.8)
     mime-types (1.23)
     multi_json (1.7.2)
+    omniauth (1.1.4)
+      hashie (>= 1.2, < 3)
+      rack
     orm_adapter (0.4.0)
     polyglot (0.3.3)
     rack (1.4.5)
@@ -123,8 +134,10 @@ DEPENDENCIES
   devise
   friendly_id
   jquery-rails
+  omniauth
   rails (= 3.2.13)
   rmagick
   sass-rails (~> 3.2.3)
+  socialization!
   sqlite3
   uglifier (>= 1.0.3)

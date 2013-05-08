@@ -1,3 +1,9 @@
+<!-- List my issues so i can track them -->
+<%= render "issues/list_my_issues" %>
+
+
+<%= render "issues/list_issues" %>
+
 <h1>Listing issues</h1>
 
 <table>
@@ -17,7 +23,7 @@
     <td><%= issue.number %></td>
     <td><%= issue.title %></td>
     <td><%= issue.editorial %></td>
-    <td><%= issue.newspaper_id %></td>
+    <td><%= issue.newspaper.name %></td>
     <td><%= issue.slug %></td>
     <td><%= link_to 'Show', issue %></td>
     <td><%= link_to 'Edit', edit_issue_path(issue) %></td>

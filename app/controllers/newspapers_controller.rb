@@ -69,6 +69,16 @@ class NewspapersController < ApplicationController
     end
   end
 
+
+  def subscribe
+    @newspaper = Newspaper.find(params[:slug])
+    current_user.toggle_follow!(@newspaper)
+
+    redirect_to newspapers_url()
+
+  end
+
+
   # DELETE /newspapers/1
   # DELETE /newspapers/1.json
   def destroy

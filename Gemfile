@@ -12,6 +12,11 @@ gem 'sqlite3'
 gem 'carrierwave'
 gem 'rmagick'
 
+#follow, like and mention
+gem "socialization", :git => 'git://github.com/cmer/socialization.git'
+
+gem "omniauth"
+
 #authentification gems and modules
 gem 'devise'#, :git => 'git@github.com:SlimBN/Slim-Auth.git'
 #gem 'devise'

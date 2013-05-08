@@ -3,6 +3,8 @@ class Newspaper < ActiveRecord::Base
 
   belongs_to :category
 
+  acts_as_followable
+
   #has_many :articles, :foreign_key => :newspaper_id, :dependent => :destroy
 
   mount_uploader :miniature, MiniatureUploader

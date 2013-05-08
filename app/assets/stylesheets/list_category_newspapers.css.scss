@@ -1,5 +1,5 @@
 #category_journals_box {
-	width: 800px;
+	width: 770px;
 
 	margin-top: 40px;
 
@@ -19,7 +19,7 @@
 	}
 
 	.main {
-		width: 800px;
+		width: 791px;
 		
 		padding: 10px;
 
@@ -50,7 +50,10 @@
 		}
 			
 		.newspaperbox {
-			width: 200px;
+			width: 180px;
+			min-height: 250px;
+
+			position: relative;
 
 			display: inline-block;
 			vertical-align: top;
@@ -59,12 +62,12 @@
 			margin-left: 5px;
 
 			.miniature {
-				width: 200px;
+				width: 180px;
 
 				text-align: left;
 
 				img {
-					width: 195px;
+					width: 175px;
 					height: 100px;
 
 					border: 1px solid #908578;
@@ -74,7 +77,7 @@
 			}
 
 			.title {
-				width: 200px;
+				width: 180px;
 
 				color: #000;
 				font-weight: 700;
@@ -86,9 +89,38 @@
 			}
 
 			.description {
-				width: 200px;
+				width: 180px;
 
 				color: #565B61;
+
+			}
+
+			.followtoggle {
+				width: 180px;
+
+				position: absolute;
+				bottom: 0;
+				left: 0;
+
+				padding-top: 15px;
+				padding-bottom: 15px;
+
+				text-align: center;
+
+				a {
+					width: 180px;
+
+					padding-left: 80px;
+					padding-right: 89px;
+					padding-top: 10px;
+					padding-bottom: 10px;
+
+					background-color: #FAFAFA;
+
+					border-radius: 3px;
+
+					box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
+				}
 
 			}
 		}

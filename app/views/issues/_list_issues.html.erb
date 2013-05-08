@@ -1,0 +1,17 @@
+<% Issue.order('created_at DESC').all.each do |issue| %>
+	<% if current_user.follows?(issue.newspaper) %>
+	<div class="issuebox">
+		<div class="miniature">
+			<%= link_to "image", issue_path(issue) %>
+		</div>
+		<div class="title">
+			<%= link_to issue.title, issue_path(issue) %>
+		</div>
+		<div class="description">
+			<%= truncate(issue.editorial, :length => 245) %>
+		</div>
+	</div>
+	<% else %>
+		no new issue
+	<% end %>
+<% end %>

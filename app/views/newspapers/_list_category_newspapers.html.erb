@@ -22,7 +22,14 @@
 						<%= link_to newspaper.name, newspaper_path(newspaper) %>
 					</div>
 					<div class="description">
-						<%= truncate(newspaper.description, :length => 245) %>
+						<%= truncate(newspaper.description, :length => 180) %>
+					</div>
+					<div class="followtoggle">
+						<% if current_user.follows?(newspaper) %>
+							<%= link_to 'unfollow', "newspapers/subscribe/" + newspaper.slug %>
+						<% else %>
+							<%= link_to 'follow', "newspapers/subscribe/" + newspaper.slug %>
+						<% end %>
 					</div>
 				</div>
 				<% end %>

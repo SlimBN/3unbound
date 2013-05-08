@@ -9,6 +9,8 @@ class User < ActiveRecord::Base
   attr_accessible :email, :password, :password_confirmation, :remember_me
   attr_accessible :about, :country_id, :image_url, :location_id, :name, :profession_id, :avatar, :crop_x, :crop_y, :crop_w, :crop_h
 
+  acts_as_follower
+  
   attr_accessor :crop_x, :crop_y, :crop_w, :crop_h
   after_update :crop_avatar
   
