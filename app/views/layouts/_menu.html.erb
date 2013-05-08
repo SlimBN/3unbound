@@ -9,8 +9,15 @@
     <li><%= link_to (image_tag "icon/articles.png"), articles_path() %></li>
     <li class="vlast"><%= link_to (image_tag "icon/featured.png"), issues_path() %></li>
     
-    <li><%= link_to (image_tag "icons/Stocks.png"), articles_path() %></li>
+    <% Category.all.each do |category| %>
+    <% newspapersnumber = Newspaper.where("category_id = ?", category.id).count %>
+
+        <% unless (newspapersnumber == 0) %>
+            <li><%= link_to (image_tag "icons/Stocks.png"), category_path(category) %></li>
+        <% end %>
+    <% end %>
+    <!--
     <li><%= link_to (image_tag "icons/Weather.png"), articles_path() %></li>
     <li><%= link_to (image_tag "icons/Iconfest.png"), articles_path() %></li>
-    <li><%= link_to (image_tag "icons/Iconpaper.png"), articles_path() %></li>
+    <li><%= link_to (image_tag "icons/Iconpaper.png"), articles_path() %></li>-->
 </ul>
