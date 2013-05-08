@@ -1,0 +1,32 @@
+<%= render "newspapers/issues_list" %>
+
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @newspaper.name %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @newspaper.description %>
+</p>
+
+<p>
+  <b>Category:</b>
+  <%= @newspaper.category.name_fr %>
+</p>
+
+<p>
+  <b>User:</b>
+  <%= @newspaper.user_id %>
+</p>
+
+<p>
+  <b>Miniature:</b>
+  <%= @newspaper.miniature %>
+</p>
+
+
+<%= link_to 'Edit', edit_newspaper_path(@newspaper) %> |
+<%= link_to 'Back', newspapers_path %>

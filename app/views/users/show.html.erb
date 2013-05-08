@@ -1,0 +1,37 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @user.name %>
+</p>
+
+<%= image_tag @user.avatar_url.to_s %>
+
+<p>
+  <b>Location:</b>
+  <%= @user.location_id %>
+</p>
+
+<p>
+  <b>Country:</b>
+  <%= @user.country_id %>
+</p>
+
+<p>
+  <b>About:</b>
+  <%= @user.about %>
+</p>
+
+<p>
+  <b>Profession:</b>
+  <%= @user.profession_id %>
+</p>
+
+<p>
+  <b>Image url:</b>
+  <%= @user.image_url %>
+</p>
+
+
+<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Back', users_path %>

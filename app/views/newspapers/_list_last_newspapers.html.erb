@@ -1,0 +1,22 @@
+<div id="newspaperslist">
+
+	<div class="header">
+		Derniers journaux créés
+	</div>
+
+	<% Newspaper.order('created_at DESC').all.each do |newspaper| %>
+	<div class="newspaperbox">
+		<div class="miniature">
+			<%= link_to (image_tag newspaper.miniature_url.to_s), newspaper_path(newspaper) %>
+		</div>
+		<div class="title">
+			<%= link_to newspaper.name, newspaper_path(newspaper) %>
+		</div>
+		<div class="description">
+			<%= newspaper.description %>
+		</div>
+	</div>
+	<% end %>
+
+</div>
+

@@ -1,0 +1,39 @@
+<%= form_for(@newspaper) do |f| %>
+  <% if @newspaper.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@newspaper.errors.count, "error") %> prohibited this newspaper from being saved:</h2>
+
+      <ul>
+      <% @newspaper.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+    <div class="field">
+    <%= f.file_field :miniature %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br />
+    <%= f.text_area :description %>
+  </div>
+  <div class="field">
+    <%= f.label :category_id %><br />
+    <select id="newspaper_category_id" name="newspaper[category_id]">
+      <% Category.all.each do |category|  %>
+        <option value="<%= category.id %>"><%= category.name_fr %> </option>
+      <% end %>
+    </select>
+  </div>
+  <div class="field">
+    <%= f.hidden_field :user_id, :value => current_user.id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,35 @@
+<% Category.all.each do |category| %>
+
+	<% number = Newspaper.where("category_id = ?", category.id).count %>
+
+	<% if number > 0 %>
+		<div id="category_journals_box">
+			<div class="left">
+				<%= link_to (image_tag "icon/newspapers.png"), newspapers_path() %>
+			</div>
+
+			<div class="main">
+				<div class="header">
+					<%= category.name_fr %>
+				</div>
+
+				<% Newspaper.where("category_id = ?", category.id).each do |newspaper| %>
+				<div class="newspaperbox">
+					<div class="miniature">
+						<%= image_tag newspaper.miniature_url.to_s %>
+					</div>
+					<div class="title">
+						<%= link_to newspaper.name, newspaper_path(newspaper) %>
+					</div>
+					<div class="description">
+						<%= newspaper.description %>
+					</div>
+				</div>
+				<% end %>
+				
+			</div>
+		</div>
+		
+	<% end %>
+
+<% end %>
